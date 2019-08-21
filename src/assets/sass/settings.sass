@@ -1,0 +1,197 @@
+
+// Colors
+$primary:       #5A3E25
+$primary-light: #b6dc3d
+$primary-dark:  #5A3E25
+$link:          #35B031 
+$link-light:    #35B031
+$link-dark:     #1c9a00
+$info:          #D0D2B1
+$info-light:    #D0D2B1
+$info-dark:     #D0D2B1
+
+$text:          rgb(255, 255, 255)
+
+$white:         rgb(255, 255, 255)
+$grey-lighter:  #eee
+$grey-light:    #bbb
+$grey:          #6F6F6F
+$grey-dark:     #444
+$grey-darker:   #222
+$black:         rgb(18, 18, 18)
+
+$orange:    hsl(14, 100%, 53%)
+$yellow:    hsl(48, 100%, 67%)
+$green:     hsl(141, 71%, 48%)
+$blue:      #39BEEC
+$purple:    hsl(271, 100%, 71%)
+$red:       hsl(348, 100%, 61%)
+
+$success:           rgb(35, 209, 96)
+$warning:           rgb(255, 221, 87)
+$danger:            rgb(255, 56, 96)
+
+$primary-invert:    findColorInvert($primary)
+$link-invert:       findColorInvert($link)
+$info-invert:       findColorInvert($info)
+
+// Here you can set the font-sizes that a website has. They should be decreasing order.
+$size-1: 6.4rem
+$size-2: 3rem
+$size-3: 2.5rem
+$size-4: 1.8rem
+$size-5: 1.6rem
+// These sizes are optional (Exceptional sizes). They could be any size (bigger or smaller than others).
+$size-6: 1.3rem
+$size-7: 1rem
+
+// Sizes
+$size-small:    $size-5
+$size-normal:   $size-4
+$size-medium:   $size-3
+$size-large:    $size-2
+
+// Use primary font. Ex: 'Roboto', Arial, sans-serif
+$family-primary:    'Open Sans', Arial, sans-serif
+$family-secondary:  'Raleway', Arial, sans-serif
+
+// Primary background color
+$background:            rgb(245, 245, 245)
+$body-background-color: $white
+
+// Set default radius
+$radius: 0.5rem
+
+// Change if needed
+$weight-light:      300
+$weight-normal:	    400
+$weight-medium:	    500
+$weight-semibold:   600
+$weight-bold:       700
+
+// Dimension settings
+$gap:               64px
+$tablet:            481px
+$desktop:           960px + (2 * $gap)
+$widescreen:        1152px + (2 * $gap)
+$widescreen-enabled: true
+$fullhd:            1344px + (2 * $gap)
+$fullhd-enabled:     true
+
+// Navigation settigns
+$navbar-height:             3.5rem
+$navbar-background-color:   $white
+$navbar-box-shadow-color:   $background
+$navbar-padding-vertical:   0
+$navbar-padding-horizontal: 1.5rem
+$navbar-item-color:         $grey
+$navbar-item-hover-color:   $link
+$navbar-item-active-color:  $black
+$navbar-burger-color:       $navbar-item-color
+
+// Section settings
+$section-padding:           4rem 1.5rem	
+$section-padding-medium:    3rem 1.5rem	
+$section-padding-large:     18rem 1.5rem
+
+// Default button settings
+$button-color:              #fff
+// $button-background-color:   $link
+$button-border-color:       transparent
+$button-border-width:       .1rem
+$button-padding-vertical:   1.3rem
+$button-padding-horizontal: 5rem
+
+// $button-hover-color:        $white
+// $button-hover-border-color: transparent
+
+// $button-active-color:           $grey-darker
+// $button-active-border-color:    $grey-dark
+
+$button-text-color:                     $text
+$button-text-hover-background-color:    $background
+$button-text-hover-color:               $grey-darker
+
+// $button-disabled-background-color:  $white
+// $button-disabled-border-color:      $grey-lighter
+// $button-disabled-shadow:            none
+// $button-disabled-opacity:           0.5
+
+
+// Dropdown settings
+$dropdown-content-background-color: $white
+$dropdown-content-arrow:    $link
+$dropdown-content-radius:   $radius
+$dropdown-content-shadow:   0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1)
+$dropdown-item-hover-color: $black
+$dropdown-item-hover-background-color: $background
+$dropdown-item-active-background-color: $link
+
+// Box settings
+$box-color:                 $text
+$box-background-color:      $white
+$box-radius:                $radius
+$box-shadow:                0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1)
+$box-padding:               1.25rem
+$box-link-hover-shadow:     0 2px 3px rgba($black, 0.1), 0 0 0 1px $link
+$box-link-active-shadow:    inset 0 1px 2px rgba($black, 0.2), 0 0 0 1px $link
+
+// Modal settigns
+$modal-content-width: 640px
+
+// Form settings
+$input-color:                       $text
+$input-background-color:            transparent
+$input-border-color:                #888
+$input-shadow:                      none
+$input-hover-color:                 $text
+$input-hover-border-color:          $link
+$input-disabled-color:              $grey
+$input-disabled-background-color:   $background
+$input-disabled-border-color:       $background
+$input-arrow:                       $link
+$input-icon-color:                  $grey-lighter
+$input-icon-active-color:           $grey
+$input-radius:                      5px
+
+// Label settings
+$label-color:   $grey-darker
+$label-weight:  $weight-bold
+$help-size:     $size-small
+
+// Breadcrumb settings
+$breadcrumb-item-color:                 $grey
+$breadcrumb-item-hover-color:           $link
+$breadcrumb-item-padding-vertical:      0
+$breadcrumb-item-padding-horizontal:    0.75rem
+$breadcrumb-item-separator-color:       $grey-light
+
+// Pagination settings
+$pagination-color:                      $grey-darker
+$pagination-border-color:               $grey-lighter
+$pagination-margin:                     -0.25rem
+$pagination-hover-color:                rgb(181, 181, 181)
+$pagination-hover-border-color:         rgb(181, 181, 181)
+$pagination-focus-color:                rgb(54, 54, 54)
+$pagination-focus-border-color:         rgb(181, 181, 181)
+$pagination-active-color:               rgb(54, 54, 54)
+$pagination-active-border-color:        rgb(181, 181, 181)
+$pagination-disabled-color:             $grey
+$pagination-disabled-background-color:  $grey-lighter
+$pagination-disabled-border-color:      $grey-lighter
+$pagination-current-color:              $link-invert
+$pagination-current-background-color:   $link
+$pagination-current-border-color:       $link
+$pagination-ellipsis-color:             $grey-light
+    
+/* Additional components you might use. You can get their settings variables from our official KB - https://kb.weband.bg/
+    - Delete (Button styles)
+    - Notification panels
+    - Progressbar
+    - Table
+    - Tag (labels)
+    - Card (Content box)
+    - Menu (Aside menu)
+    - Message (Content box)
+    - Tabs (Tab panels)
+    - File upload (Button styles) */

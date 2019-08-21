@@ -1,0 +1,621 @@
+@import "../../../node_modules/bulma/sass/utilities/functions"
+
+/*  -- Welcome to Weband predefined CSS Sheet! --
+    Here you can set all the variables you will need in your Web Application.
+    You SHOULD enter values on each empty variable.
+    Where you see commented values, you can leave them as default (Do not delete comment value). */
+
+
+// Do not touch ... please
+@import './settings.sass'
+@import "../../../node_modules/bulma/bulma"
+@import './responsive.sass'
+@import './wa-fe.sass'
+
+// Here you change the main properties of the elements
+body, html
+    height: auto !important
+    min-height: 100vh !important
+    display: flex
+    flex-direction: column
+    // top: auto !important
+    // position: static !important
+
+h1,
+.h1
+    font-size: $size-1
+    font-family: $family-secondary
+    font-weight: 700
+    line-height: 1.2
+    margin: 2rem 0 1rem 0
+
+    @include tablet 
+        font-size: 3rem
+
+@include tablet
+    .is-size-1
+        font-size: 3rem !important
+
+h2,
+.h2
+    font-size: $size-2
+    font-family: $family-secondary
+    font-weight: 700
+    line-height: 1.2
+
+    @include tablet 
+        font-size: 2.5rem
+
+@include tablet
+    .is-size-2
+        font-size: 2.5rem !important
+
+h3,
+.h3 
+    font-size: $size-3
+    font-family: $family-secondary
+    font-weight: 700
+
+    @include tablet 
+        font-size: 2.2rem
+
+@include tablet
+    .is-size-3
+        font-size: 2.2rem !important
+
+h4,
+.h4 
+    font-size: $size-4
+    font-family: $family-secondary
+    font-weight: 700
+
+    @include tablet 
+        font-size: 2rem
+
+@include tablet
+    .is-size-4
+        font-size: 2rem !important
+
+h5,
+.h5
+    font-size: $size-5
+    font-family: $family-secondary
+    font-weight: 700
+
+    @include tablet 
+        font-size: 1.8rem
+
+@include tablet
+    .is-size-5
+        font-size: 1.8rem !important
+
+h6,
+.h6 
+    font-size: $size-6
+    font-weight: 600
+p,
+ul li
+    font-size: $size-7
+    margin: 1rem 0
+    font-weight: 700
+    // color: #000
+a,
+span,
+.button
+    font-size: $size-5
+    font-weight: 700
+
+h1, h2, h3, h4, h5, p
+    a
+        color: inherit
+        font-size: inherit
+        font-weight: inherit
+
+        &:hover
+            color: inherit
+            text-decoration: underline
+
+.button
+    height: auto
+    border-radius: 0rem
+    position: relative
+    padding: .2rem 5rem
+    text-decoration: none !important
+    text-shadow: 1px 1px 2px rgba(0,0,0,.4)
+    box-shadow: 0 -2px rgba(21, 108, 0, 0.5) inset, 0 2px rgba(100, 253, 31, 0.99) inset, -2px 0 rgba(21, 108, 0, 0.5) inset, 2px 0 rgb(100, 252, 30) inset
+
+    &.is-primary
+        background: $primary
+
+        &:not(.is-disabled):hover
+            background: $primary-dark
+    &.is-link
+        background: $link
+
+        &:not(.is-disabled):hover
+            background: $link-dark
+            text-shadow: -1px -1px 3px rgba(0,0,0,.3)
+            box-shadow: 0 -2px rgba(21, 108, 0, 0.5) inset, 0 2px rgba(21, 108, 0, 0.5) inset, -2px 0 rgba(21, 108, 0, 0.5) inset, 2px 0 rgba(21, 108, 0, 0.5) inset
+        &.locked
+            color: #989898
+            background: #23372d
+            text-shadow: none
+            box-shadow: 0 -2px rgba(69, 93, 63, 0.5) inset, 0 2px rgba(92, 125, 77, 0.99) inset, -2px 0 rgba(21, 108, 0, 0.5) inset, 2px 0 #86a278 inset
+            &:hover
+                cursor: not-allowed
+                color: #989898
+                background: #23372d
+                box-shadow: 0 -2px rgba(69, 93, 63, 0.5) inset, 0 2px rgba(92, 125, 77, 0.99) inset, -2px 0 rgba(21, 108, 0, 0.5) inset, 2px 0 #86a278 inset
+        &.bought
+            color: #7b7b7b
+            background: #72cc6f
+            text-shadow: none
+            box-shadow: 0 -2px rgba(24, 121, 0, 0.5) inset, 0 2px rgba(193, 255, 165, 0.99) inset, -2px 0 rgba(18, 95, 0, 0.5) inset, 2px 0 #bdff9c inset
+            &:hover
+                cursor: not-allowed
+                color: #7b7b7b
+                text-shadow: none
+                background: #72cc6f
+                box-shadow: 0 -2px rgba(24, 121, 0, 0.5) inset, 0 2px rgba(193, 255, 165, 0.99) inset, -2px 0 rgba(18, 95, 0, 0.5) inset, 2px 0 #bdff9c inset
+    &.is-outlined
+        color: $text 
+        box-shadow: none
+
+        &:hover
+            color: #fff
+        &:focus
+            color: $text
+    &.is-disabled,
+    &[disabled],
+    &[disabled="disabled"]
+        opacity: 0.7
+        cursor: default
+
+.input
+    width: 100%
+    height: auto
+    display: block
+    padding: 1rem
+    margin: 1rem 0
+    background: rgba(53, 34, 19, 0.8)
+    border-radius: 0
+    line-height: 1
+    font-size: $size-4
+    &.login
+        width: 18rem
+        height: 3rem
+        display: inline-block
+        margin: 0
+        font-size: $size-6
+
+
+.has-bckg-primary
+    background-color: $primary
+.has-bckg-primary-light
+    background-color: $primary-light
+.has-bckg-primary-dark
+    background-color: $primary-dark
+.has-bckg-link
+    background-color: $link
+.has-bckg-link-light
+    background-color: $link-light
+.has-bckg-link-dark
+    background-color: $link-dark
+.has-bckg-info
+    background-color: $info
+.has-bckg-info-light
+    background-color: $info-light
+.has-bckg-info-dark
+    background-color: $info-dark
+.has-bckg-white
+    background-color: #fff
+.has-bckg-grey-lighter
+    background-color: $grey-lighter
+.has-bckg-grey-light
+    background-color: $grey-light
+.has-bckg-grey
+    background-color: $grey
+.has-bckg-grey-dark
+    background-color: $grey-dark
+.has-bckg-grey-darker
+    background-color: $grey-darker
+
+
+$navbar-height: 8rem
+$secondary_nav-height: 4rem
+$header-height: $navbar-height + $secondary_nav-height
+
+.navbar
+    height: $navbar-height
+    background: #252525
+    background-image: url('./assets/images/header-bg.png')
+    padding: 0 1.5rem
+    transition: all .3s
+
+    #main-nav
+        flex: 1
+    .navbar-brand
+        position: relative
+        z-index: 20
+
+        @include tablet
+            display: flex
+            align-items: center
+
+        .navbar-item
+            padding: 1rem
+        img
+            max-height: none
+            height: 5rem
+            transition: all .3s
+
+    .navbar-menu
+        flex-grow: 0
+        
+        @include tablet
+            height: 0
+            display: flex !important
+            flex-direction: column
+            justify-content: space-between
+            opacity: 0
+            transition: opacity .3s
+            position: fixed
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            z-index: 10
+            padding-top: $navbar-height
+            overflow-y: scroll
+            overflow-x: hidden
+            &::-webkit-scrollbar
+                width: 5px
+            &::-webkit-scrollbar-track
+                background: #f7f7f7
+            &::-webkit-scrollbar-thumb
+                border-radius: 10px
+                background: $primary
+            &::-webkit-scrollbar-thumb:hover
+                background: $primary
+
+            &.is-active 
+                background-image: url('./assets/images/header-bg.png')
+                height: auto
+                opacity: 1
+
+            .navbar-end
+                padding: 1rem
+
+        .navbar-item
+            padding: 0
+            height: 100%
+            a
+                text-transform: uppercase
+                padding-top: 0
+                text-shadow: 1px 1px 2px rgba(0,0,0,.8)
+                flex-direction: column
+            img
+                width: 45px
+                max-height: none
+
+            @include tablet
+                height: auto
+        .navbar-link
+            height: 100%
+            padding: 1.5rem
+            font-size: 1.4rem
+            font-family: $family-secondary
+            color: #fff
+            background: none !important
+
+            @include tablet
+                height: auto
+            
+            @include mobile
+                align-items: center
+
+            &:after
+                display: none
+            &:hover
+                color: $link
+            &.is-active
+                color: $link
+
+            i.mdi
+                display: inline-block
+                transition: all .3s
+
+                &.is-active
+                    transform: rotate(180deg)
+
+    .players-online
+        color: $link
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        flex: 1
+        font-size: $size-6
+        font-family: 'minecraft'
+
+        i
+            color: $link
+            margin-right: 0.4rem
+        @include mobile
+            justify-content: flex-start
+        
+    .navbar-dropdown
+        left: 50%
+        margin-top: 0.1rem
+        padding: 1rem 2rem
+        border-top: none
+        border-radius: 0
+        transform: translateX(-50%)
+        background: #F7F7F7
+        // box-shadow: $shadow
+        flex-direction: column
+        align-items: center
+
+        @include tablet
+            left: 0
+            transform: none
+            display: none
+            align-items: flex-start
+
+            &.is-active
+                display: flex
+
+        a
+            display: inline-flex
+            white-space: nowrap
+
+    .navbar-burger
+        width: 4rem
+        height: 4rem
+        margin-right: 1rem
+
+        &.is-active
+            span
+                &:nth-child(1)
+                    top: 50%
+                    transform: rotate(45deg)
+                &:nth-child(2)
+                    opacity: 0
+                &:nth-child(3)
+                    top: 50%
+                    transform: rotate(-45deg)
+
+        span
+            width: 3rem
+            height: 0.4rem
+            right: 0.5rem
+            left: auto
+            background: $primary
+            border-radius: 1rem
+            transition: all .3s
+            
+            &:nth-child(1)
+                top: calc(50% - 1.2rem)
+            &:nth-child(3)
+                top: calc(50% + 1rem)
+
+@include tablet
+    .headroom
+        overflow: hidden
+
+        &.headroom--pinned,
+        &.menu-open
+            transform: none !important
+
+.headroom.menu-open
+    bottom: 0
+
+div.is-alert
+    padding: 1rem 2rem
+    margin-bottom: 2rem
+    border: 4px solid #222
+    &.success
+        background: green
+    &.error
+        background: red
+    p
+        font-size: $size-5
+
+article
+    p
+        margin-bottom: 1.6rem
+        font-size: $size-5
+        font-weight: 400
+    strong
+        color: $primary
+    ul
+        list-style-type: disc
+        padding-left: 3rem
+        li
+            font-size: $size-5
+            font-weight: 400
+// On scroll
+.headroom
+    &.headroom--pinned
+        .secondary-header
+            margin-top: 0 
+            transition: all .3s
+            @include mobile
+                &>div
+                    flex-direction: column
+        .navbar-brand
+            img
+                height: 6rem
+                @include mobile
+                    height: 4rem
+    &.headroom--unpinned
+        transform: translate3d(0px, 0px, 0px) !important
+        .secondary-header
+            margin-top: -4.5rem
+            transition: all .3s
+            @include mobile
+                margin-top: -3rem
+        .navbar-brand
+            img
+                height: 5rem
+                @include mobile
+                    height: 3rem
+
+header
+    .secondary-header
+        height: 5rem
+        background: #5a3e26
+        color: $white
+        font-size: $size-4
+        border-top: 2px solid #8fca5c
+        border-bottom: 3px solid $grey-darker
+        @include mobile
+            height: auto
+        span
+            margin-right: 1rem
+            line-height: 3.4rem
+        .stats
+            display: flex
+            div
+                display: flex
+                align-items: center
+                font-size: $size-5
+                img
+                    width: 2.4rem
+
+main
+    position: relative
+    padding-top: $header-height
+    overflow: hidden
+
+aside.aside
+    margin-top: 12.5rem
+aside .stats-holder
+    margin-bottom: 2rem
+
+.hero-section
+    display: flex
+    align-items: center
+    background-repeat: no-repeat
+    background-position-x: center
+    background-position-y: center
+    background-size: cover
+    text-shadow: 1px 1px 2px rgba(0,0,0,.3)
+    &.medium
+        height: 30rem
+        @include mobile
+            height: auto
+        @include fullhd-1920
+            height: 60rem
+    &.large
+        height: 50rem
+        @include mobile
+            height: auto
+        @include fullhd-1920
+            height: 60rem
+    
+section.section.body-content
+    background: linear-gradient(#be823e,#3d2d19)
+    border-top: 4px solid #189112
+    &.landing
+        background: linear-gradient(#2770be,#012752)
+        border-top: 4px solid rgb(36, 105, 180)
+.footer-content
+    padding: 4rem 0
+    border-top: 4px solid rgb(14, 15, 20)
+    border-bottom: 4px solid #dc6203
+    background: url('./assets/images/obsidian-bg.png') center center fixed
+    hr
+        margin: 2rem auto
+        background: #2d2441
+    // a
+    //     font-weight: 200 !important
+
+footer .gratefulness
+    margin-bottom: 2rem
+    li
+        display: flex
+        font-size: $size-5
+        float: left
+        margin: 0 2rem
+        align-items: center
+    img
+        margin-right: 1rem
+    .title
+        color: $white
+        text-align: center
+        font-weight: 200
+        font-family: minecraft
+        font-size: $size-6
+
+
+.font-minecraft
+    font-family: minecraft
+
+// Modal Style
+div.verification-modal
+    .v--modal-box
+        border: 4px solid $grey-darker
+        color: $primary-invert
+        background-color: #5A3E27
+        box-shadow: 0 -4px rgba(53, 34, 19, 0.8) inset, 0 4px rgba(117, 195, 41, 0.9) inset, -4px 0 rgba(53, 34, 19, 0.8) inset, 4px 0 rgba(194, 131, 64, 0.4) inset
+    .dialog-content
+        text-align: center
+        .dialog-c-title
+            font-size: 1.6rem
+        .dialog-c-text
+            p
+                font-size: 1.4rem
+                strong
+                    color: #fff
+    .vue-dialog-buttons,
+    .vue-dialog-buttons button
+        border: none
+        display: flex
+    .vue-dialog-buttons
+        justify-content: space-evenly
+        padding: 1rem 0
+        button
+            flex: 0 !important
+            padding: 0 6rem
+            height: 3rem
+            font-size: $size-5 !important
+            font-weight: 600
+            &:nth-child(2)
+                background: $link
+                text-shadow: -1px -1px 3px rgba(0, 0, 0, 0.3)
+                box-shadow: 0 -2px rgba(21, 108, 0, 0.5) inset, 0 2px rgba(100, 253, 31, 0.99) inset, -2px 0 rgba(21, 108, 0, 0.5) inset, 2px 0 #64fc1e inset
+                &:hover
+                    text-shadow: -1px -1px 3px rgba(0, 0, 0, 0.3)
+                    box-shadow: 0 -2px rgba(21, 108, 0, 0.5) inset, 0 2px rgba(21, 108, 0, 0.5) inset, -2px 0 rgba(21, 108, 0, 0.5) inset, 2px 0 rgba(21, 108, 0, 0.5) inset
+    
+.mc-box
+    width: 100%
+    padding: 3rem 2rem
+    border: 4px solid $grey-darker
+    &.dirt
+        color: $primary-invert
+        background-color: #5A3E27
+        box-shadow: 0 -4px rgba(53, 34, 19, 0.8) inset, 0 4px rgba(117, 195, 41, 0.9) inset, -4px 0 rgba(53, 34, 19, 0.8) inset, 4px 0 rgba(194, 131, 64, 0.4) inset
+    &.sandstone
+        color: $primary
+        background: #d1d3b1
+        box-shadow: 0 -4px rgba(103, 68, 19, 0.66) inset, 0 4px rgba(255, 255, 128, 0.47) inset, -4px 0 rgba(103, 68, 19, 0.66) inset, 4px 0 rgba(255, 255, 128, 0.47) inset
+    &.water
+    &.prisma
+        color: $primary-invert
+        background: url('./assets/images/prisma-bg.png')
+        box-shadow: 0 -4px rgba(19, 100, 103, 0.9) inset, 0 4px rgba(100, 255, 203, .6) inset, -4px 0 rgba(19, 100, 103, 0.9) inset, 4px 0 rgba(100, 255, 203, .6) inset
+    img
+        align-self: center
+        max-height: 11rem
+
+section.shop
+    .mc-box.dirt
+        max-width: 30rem
+
+.discord-info
+    height: 40rem
+    border: 2px solid #212121
+    border-radius: 5px
+
+// Inner pages

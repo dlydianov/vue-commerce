@@ -1,27 +1,24 @@
 <template>
   <div id="app">
+    <wa-header></wa-header>
     <router-view/>
+    <wa-footer></wa-footer>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+<script>
+import WaHeader from '@/components/common/WaHeader'
+import WaFooter from '@/components/common/WaFooter'
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+export default {
+  components: {
+    WaHeader,
+    WaFooter
+  }  
 }
+</script>
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style lang="sass">
+@import '@/assets/sass/style.sass'
+
 </style>
