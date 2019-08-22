@@ -28,9 +28,9 @@
                         </div>
                     </div>
                     <div class="navbar-brand">
-                        <a class="navbar-item" href="#">
+                        <router-link class="navbar-item" to="/">
                             <img src="@/assets/images/logo.png" alt="Hollyweed">
-                        </a>
+                        </router-link>
 
                         <a role="button" 
                             :class="{'navbar-burger': true, 'burger': true, 'is-active': openedMenu}" 
@@ -55,23 +55,24 @@
                             <span>200</span>
                         </div>
                     </div>
-                    <div v-if="!auth">
-                        <form :action="cta_button_url" method="POST">
-                            <!-- Login error message -->
-                            <!-- <span class="has-text-danger">Грешно име или парола!</span> -->
-                            <input type="hidden" name="_token">
-                            <input type="text" name="username" class="input login" placeholder="Име в Hollyweed"/>
-                            <input type="password" name="password" class="input login" placeholder="Парола"/>
-                            <button class="button is-link" type="submit">Вход</button>
-                        </form>
-                    </div>
-                    <div v-else class="is-flex">
+                    <template v-if="isAuthenticated" class="is-flex">
                         <div class="mr20 is-hidden-mobile">Добре дошъл, Шавдавд</div>
-                        <form :action="cta_button_url" method="POST">
+                        <form @submit.prevent="logout" method="POST">
                             <input type="hidden" name="_token">
                             <button class="button is-link" type="submit">Изход</button>
                         </form>
-                    </div>
+                    </template>
+                    <template v-else>
+                        <form @submit.prevent="onLoginClick" method="POST">
+                            <!-- Login error message -->
+                            <!-- <span class="has-text-danger">Грешно име или парола!</span> -->
+                            <input type="hidden" name="_token">
+                            <input type="text" name="username" v-model="username" class="input login" placeholder="Име в Hollyweed"/>
+                            <input type="password" name="password" v-model="password" class="input login" placeholder="Парола"/>
+                            <button class="button is-link" type="submit">Вход</button>
+                            <router-link to="/register">Регистрирай се!</router-link>
+                        </form>
+                    </template>
                 </div>
             </div>
         </header>
@@ -80,20 +81,23 @@
 
 <script>
 import { headroom } from 'vue-headroom'
+import { authenticate } from '@/services/authServices'
 
 export default {
         props: ['disabled', 'logo_url', 'home_url', 'menu_links', 'auth', 'cta_button_url', 'server_info', 'csrf', 'user'],
         components: {
             headroom
         },
-
         data: function () {
             return {
                 openedMenu: false,
                 last_expand: 0,
                 expands: [],
+                username: '',
+                password: ''
             }
         },
+        mixins: [authenticate],
         methods: {
             toggleMenu: function () {
                 this.openedMenu = !this.openedMenu
@@ -114,6 +118,22 @@ export default {
                 }
                 return location.href == url
             },
+            onLoginClick() {
+                this.login(this.username, this.password)
+                    .then(user => {
+                    this.$root.$emit('logged-in', user.authtoken)
+                    this.$router.push('/register')
+                    })
+                },
+            onLogoutClick() {
+                this.logout()
+                    .then(() => {
+                        this.$root.$emit('logged-out')
+                        console.log('tuk')
+                        this.$router.$push('/')
+                    }
+                )
+            }
         },
         computed: {
         homepage_url: function () {

@@ -5,7 +5,7 @@
             hero.height
         ]" 
         :style="{
-            'background-image': 'url(images/' + hero.background_img_filename +')'
+            backgroundImage: 'url(' + require('@/assets/images/hero-index.png') + ')'
         }">
 
         <div class="container">
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import Main from '@/data/main'
+import Main from '@/data/mainData'
 
 export default {
     data(){
